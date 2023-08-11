@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App note</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/99e0b75652.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="ensemble" style="display: flex; height: 95vh;">
+        <div class="sidebar" style="height: 95%; justify-content: space-between; display: flex; flex-direction: column;">
+            <div class="space">
+                <div class="id" style="display: flex; justify-content: space-between; font-size: 20px;">
+                    <div class="bracket"><i class="fa-solid fa-right-from-bracket"></i></div>
+                    <div class="trash"><i class="fa-solid fa-trash"></i></div>
+                </div>   
+                <h3 style="margin: 15px; text-align: center;">Bienvenue Identifiant</h3>
+            </div>
+            <div style="display: flex; ">
+                <button id="buttonmoon" onclick="darkMode()"><i class="fa-solid fa-moon"></i></button>
+                <button id="buttonsun" class="hidden" onclick="lightMode()"><i class="fa-solid fa-sun"></i></button>
+            </div>
+        </div>
+        
+        <div class="note" style="margin-left: 2%; width: 100%; padding-right: 10px;">
+            <div class="navbar" style="display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 10px;">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; font-size: 20px;">
+                    <div class="square"><i class="fa-regular fa-pen-to-square"></i></div> 
+                </div>
+                <div class="write" style="display: flex; flex-direction: row; justify-content: space-between; font-size: 20px;">
+                    <div class="font"><i class="fa-solid fa-font"></i></div>
+                    <div class="liste"><i class="fa-solid fa-list"></i></div>
+                    <div class="table"><i class="fa-solid fa-table"></i></div>
+                    <div class="image"><i class="fa-solid fa-image"></i></div>
+                </div>
+                <div class="share" style="display: flex; flex-direction: row; justify-content: space-between;font-size: 20px;" >
+                    <div class="link"><i class="fa-solid fa-link"></i></div>
+                    <div class="lock"><i class="fa-solid fa-lock"></i></div>
+                    <div class="glass"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+            </div>
+            <div class="textarea" style="height: 90%; flex-grow: 4; margin: 5px;">
+            <textarea id="note" name="note" style="width: 100%; height: 100%;"></textarea>
+            </div> 
+        </div> 
+    </div>
+
+    <script>
+        function darkMode() {
+        let element = document.body;
+        element.className = "dark-mode";
+
+        let buttonsun = document.getElementById("buttonsun");
+        let buttonmoon = document.getElementById("buttonmoon");
+        buttonmoon.classList.add("hidden");
+        buttonsun.classList.remove("hidden");
+    }
+    function lightMode() {
+        let element = document.body;
+        element.className = "light-mode";
+
+        let buttonsun = document.getElementById("buttonsun");
+        let buttonmoon = document.getElementById("buttonmoon");
+        buttonmoon.classList.remove("hidden");
+        buttonsun.classList.add("hidden");
+    }
+    </script>
+    <nav>
+        <ul>
+            <li class="déroulant"><a href="#">image</a>
+                <ul class="sous">
+                    <li><a href="#">Photo...</a></li>
+                </ul>
+            </li>
+            <li class="déroulant"><a href="#">Titre</a>
+                <ul class="sous">
+                    <li><a href="#">Titre</a></li>
+                    <li><a href="#">Sous-titre</a></li>
+                    <li><a href="#">Titre secondaire</a></li>
+                    <li><a href="#">Corps</a></li>
+                    <li><a href="#">Monochasse</a></li>
+                    <li><a href="#">.Liste à puces</a></li>
+                    <li><a href="#">-Liste à tirets</a></li>
+                    <li><a href="#">1.Liste numérotée</a></li>
+                </ul>
+            </li>
+            <li class="déroulant"><a href="#">liens</a>
+            </li>
+            <li class="déroulant"><a href="#">vérouiller</a>
+                <ul class="sous">
+                    <li><a href="#">vérouiller la note</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
+
